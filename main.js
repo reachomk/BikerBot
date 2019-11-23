@@ -46,7 +46,13 @@ commands = function(message, bot) {
  			else {
    				number = random;
  			}
- 			var imageName = "https://res.cloudinary.com/drferrel/image/upload/v1568689715/memes/meme" + random + ".jpg"
+ 			try {
+ 				var imageName = "https://res.cloudinary.com/drferrel/image/upload/v1568689715/memes/meme" + random + ".jpg";
+ 			}
+ 			catch(exception) {
+ 				let rand = (Math.floor(Math.random() * Math.floor(527))) + 1;
+ 				var imageName = "https://res.cloudinary.com/drferrel/image/upload/v1568689715/memes/meme" + random + ".jpg";
+ 			}
  			message.channel.send({
      		file: imageName
  			});
