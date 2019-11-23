@@ -6,7 +6,6 @@ const deep_thoughts = [
 	"\"If you go through a lot of hammers each month, I don't think it necessarily means you're a hard worker. It may just mean that you have a lot to learn about proper hammer maintenance.\" - Jake Handie", 
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
-const config = require("process.env.BOT_TOKEN");
 
 bot.on("ready", () => {
   console.log("I am alive!");
@@ -24,7 +23,7 @@ bot.on("message", (message) => {
   }
 });
 
-bot.login(config.token);
+bot.login(process.env.BOT_TOKEN);
 
 commands = function(message, bot) {
 	if (message.content.startsWith("!")) {
