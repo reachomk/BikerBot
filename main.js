@@ -38,7 +38,7 @@ commands = function(message, bot) {
 			var random = (Math.floor(Math.random() * Math.floor(527))) + 1
  			var number = "";
  			if (random < 10) {
-   				number = "00" + i;
+   				number = "00" + random;
  			}
  			else if (random > 9 && random < 100) {
    				number = "0" + random;
