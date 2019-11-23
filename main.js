@@ -35,7 +35,7 @@ commands = function(message, bot) {
 			message.channel.send(deep_thoughts[Math.floor(Math.random() * deep_thoughts.length)]);
 		}
 		if (message.content.includes("history_meme")) { //Stolen from https://github.com/sodiumkid/Dr-Ferrel/blob/13f2bc9329983e579e1ca8b72cd7b5ad5fd0bb37/functions.js#L29
-			history_meme(bot)
+			history_meme(message, bot);
 		}
 	}
 }
