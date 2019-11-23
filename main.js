@@ -7,6 +7,9 @@ const deep_thoughts = [
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
 
+require ('dotenv').config();
+console.log(process.env.BOT_TOKEN);
+
 bot.on("ready", () => {
   console.log("I am alive!");
 });
