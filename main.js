@@ -7,10 +7,6 @@ const deep_thoughts = [
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
 
-const PORT = process.env.PORT || 3000;
-bot.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
 
 require ('dotenv').config();
 console.log(process.env.BOT_TOKEN);
