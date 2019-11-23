@@ -40,7 +40,7 @@ commands = function(message, bot) {
 	}
 }
 
-history_meme = function(bot) {
+history_meme = function(message, bot) {
 	var random = (Math.floor(Math.random() * Math.floor(527))) + 1
  			var number = "";
  			if (random < 10) {
