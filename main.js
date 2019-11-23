@@ -7,12 +7,9 @@ const deep_thoughts = [
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
 
-const pool = mysql.createPool({
-  host: process.env.SERVER,
-  user: process.env.DATABASE_NAME,
-  port: '3306',
-  password: process.env.DATABASE_PASSWORD,
-  database: process.env.DATABASE_NAME
+const PORT = process.env.PORT || 3000;
+bot.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 require ('dotenv').config();
