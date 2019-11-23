@@ -1,18 +1,18 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const bot = new Discord.Client();
 const deep_thoughts = [
 	"\"I guess we were kinda poor when we were kids, but we didn't know it. That's because my dad always refused to let us look at the family's financial records.\" - Jack Handy", 
 	"\"Maybe in order to understand mankind, we have to look at the word itself. Basically, it's made up of two separate words — \"mank\" and \"ind.\" What do these words mean? It's a mystery, and that's why so is mankind.\" - Jaq Huundi",
 	"\"If you go through a lot of hammers each month, I don't think it necessarily means you're a hard worker. It may just mean that you have a lot to learn about proper hammer maintenance.\" - Jake Handie", 
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
-const config = require("./config.json");
+const config = require("process.env.BOT_TOKEN");
 
-client.on("ready", () => {
+bot.on("ready", () => {
   console.log("I am alive!");
 });
 
-client.on("message", (message) => {
+bot.on("message", (message) => {
   if (message.content.startsWith("ping")) {
     message.channel.send("pong!");
   }
@@ -20,13 +20,13 @@ client.on("message", (message) => {
   	message.channel.send("dong!")
   }
   else{
-  	commands(message, client);
+  	commands(message, bot);
   }
 });
 
-client.login(config.token);
+bot.login(config.token);
 
-commands = function(message, client) {
+commands = function(message, bot) {
 	if (message.content.startsWith("!")) {
 		if (message.content.includes("deep_thoughts")) {
 			message.channel.send(deep_thoughts[Math.floor(Math.random() * deep_thoughts.length)]);
@@ -46,7 +46,7 @@ commands = function(message, client) {
  			var imageName = "https://res.cloudinary.com/drferrel/image/upload/v1568689715/memes/meme" + random + ".jpg"
  			message.channel.send({
      		file: imageName
- 		});
-	}
+ 			});
+		}
 	}
 }
