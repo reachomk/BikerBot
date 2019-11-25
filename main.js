@@ -47,7 +47,13 @@ commands = function(message, bot) {
 		var msg = message.content;
 		var msgArr = msg.split(" ");
 		var km = parseInt(msgArr[0]);
-		kmtomilesINT(km, message, bot)
+		kmtomiles(km, message, bot)
+	}
+	else if (message.content.includes("miles to km")) {
+		var msg = message.content;
+		var msgArr = msg.split(" ");
+		var miles = parseInt(msgArr[0]);
+		milestokm(miles, message, bot)
 	}
 }
 
@@ -81,14 +87,18 @@ kmtomiles = function(message, bot) {
 	message.channel.send(km*1.609 + " miles. ");
 }
 
-kmtomilesINT = function(km, message, bot) {
-	console.log(km);
+kmtomiles = function(km, message, bot) {
+	//console.log(km);
 	message.channel.send(km*1.609 + " miles. ");
 }
 
 milestokm = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
-	var km = parseInt(msgArr[1]);
-	message.channel.send(km/1.609 + " km. ");
+	var miles = parseInt(msgArr[1]);
+	message.channel.send(miles/1.609 + " km. ");
+}
+
+milestokm = function(miles, message, bot) {
+	message.channel.send(miles/1.609 + " km. ");
 }
