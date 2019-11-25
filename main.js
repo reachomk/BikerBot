@@ -29,7 +29,7 @@ bot.on("message", (message) => {
 bot.login(process.env.BOT_TOKEN);
 
 commands = function(message, bot) {
-	if (message.content.startsWith("!" || ".")) {
+	if (message.content.startsWith("!") || message.content.startsWith(".")) {
 		if (message.content.includes("deep_thoughts")) {
 			message.channel.send(deep_thoughts[Math.floor(Math.random() * deep_thoughts.length)]);
 		}
@@ -38,6 +38,9 @@ commands = function(message, bot) {
 		}
 		if (message.content.includes("kmtomiles")) {
 			kmtomiles(message, bot);
+		}
+		if (message.content.includes("milestokm")) {
+			milestokm(message, bot);
 		}
 	}
 }
@@ -69,5 +72,12 @@ kmtomiles = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var km = parseInt(msgArr[1]);
-	message.channel.send(km*1.609);
+	message.channel.send(km*1.609 + "miles. ");
+}
+
+milestokm = function(message, bot) {
+	var msg = message.content;
+	var msgArr = msg.split(" ");
+	var km = parseInt(msgArr[1]);
+	message.channel.send(km/1.609 + "km. ");
 }
