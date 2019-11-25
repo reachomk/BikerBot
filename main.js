@@ -82,6 +82,7 @@ kmtomiles = function(message, bot) {
 }
 
 kmtomilesINT = function(km, bot) {
+	console.log(km);
 	message.channel.send(km*1.609 + " miles. ");
 }
 
