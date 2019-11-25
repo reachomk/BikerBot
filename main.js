@@ -43,7 +43,7 @@ commands = function(message, bot) {
 			milestokm(message, bot);
 		}
 	}
-	else if (message.content.includes("kmtomiles")) {
+	else if (message.content.includes("km to miles")) {
 		var msg = message.content;
 		var msgArr = msg.split(" ");
 		var km = parseInt(msgArr[0]);
