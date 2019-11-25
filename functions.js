@@ -19,6 +19,9 @@ exports.commands = function(message, bot) {
 		if (message.content.includes("milestokm")) {
 			milestokm(message, bot);
 		}
+		if (message.content.includes("github")) {
+			message.channel.send("https://github.com/reachomk/BikerBot");
+		}
 	}
 	else if (message.content.includes("km to miles")) {
 		var msg = message.content;
