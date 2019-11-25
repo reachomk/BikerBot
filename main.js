@@ -6,7 +6,7 @@ require ('dotenv').config();
 
 bot.on("ready", () => {
   console.log("I am alive!");
-  bot.setPlayingGame("Use .help to see commands. ")
+  client.user.setPresence({ game: { name: "Use .help to see commands. " }, status: 'idle' });
 });
 
 bot.on("message", (message) => {
