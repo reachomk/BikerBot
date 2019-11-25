@@ -9,7 +9,6 @@ const deep_thoughts = [
 
 
 require ('dotenv').config();
-console.log(process.env.BOT_TOKEN);
 
 bot.on("ready", () => {
   console.log("I am alive!");
@@ -38,7 +37,9 @@ commands = function(message, bot) {
 			history_meme(message, bot);
 		}
 		if (message.content.includes("kmtomiles")) {
-			message.channel.send(kmtomiles(message, bot));
+			var output = kmtomiles(message, bot);
+			console.log(output);
+			message.channel.send(output);
 		}
 	}
 }
