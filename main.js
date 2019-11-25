@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-import { functions } from './functions.js';
+var functions = require('./functions.js');
 
 require ('dotenv').config();
 
