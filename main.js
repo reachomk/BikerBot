@@ -37,6 +37,9 @@ commands = function(message, bot) {
 		if (message.content.includes("history_meme")) { 
 			history_meme(message, bot);
 		}
+		if (message.content.includes("kmtomiles")) {
+			kmtomiles(message, bot);
+		}
 	}
 }
 
