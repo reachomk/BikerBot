@@ -47,7 +47,7 @@ commands = function(message, bot) {
 		var msg = message.content;
 		var msgArr = msg.split(" ");
 		var km = parseInt(msgArr[0]);
-		kmtomilesINT(km, bot)
+		kmtomilesINT(km, message, bot)
 	}
 }
 
@@ -81,7 +81,7 @@ kmtomiles = function(message, bot) {
 	message.channel.send(km*1.609 + " miles. ");
 }
 
-kmtomilesINT = function(km, bot) {
+kmtomilesINT = function(km, message, bot) {
 	console.log(km);
 	message.channel.send(km*1.609 + " miles. ");
 }
