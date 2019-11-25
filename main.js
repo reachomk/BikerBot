@@ -37,9 +37,7 @@ commands = function(message, bot) {
 			history_meme(message, bot);
 		}
 		if (message.content.includes("kmtomiles")) {
-			var output = kmtomiles(message, bot);
-			console.log(output);
-			message.channel.send(output);
+			kmtomiles(message, bot);
 		}
 	}
 }
@@ -71,5 +69,5 @@ kmtomiles = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var km = parseInt(msgArr[1]);
-	return km*1.609;
+	message.channel.send(km*1.609);
 }
