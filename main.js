@@ -43,6 +43,12 @@ commands = function(message, bot) {
 			milestokm(message, bot);
 		}
 	}
+	else if (message.content.includes("kmtomiles")) {
+		var msg = message.content;
+		var msgArr = msg.split(" ");
+		var km = parseInt(msgArr[0]);
+		kmtomilesINT(km, bot)
+	}
 }
 
 history_meme = function(message, bot) { //Stolen from https://github.com/sodiumkid/Dr-Ferrel/blob/13f2bc9329983e579e1ca8b72cd7b5ad5fd0bb37/functions.js#L29
@@ -72,12 +78,16 @@ kmtomiles = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var km = parseInt(msgArr[1]);
-	message.channel.send(km*1.609 + "miles. ");
+	message.channel.send(km*1.609 + " miles. ");
+}
+
+kmtomilesINT = function(km, bot) {
+	message.channel.send(km*1.609 + " miles. ");
 }
 
 milestokm = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var km = parseInt(msgArr[1]);
-	message.channel.send(km/1.609 + "km. ");
+	message.channel.send(km/1.609 + " km. ");
 }
