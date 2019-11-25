@@ -22,6 +22,9 @@ exports.commands = function(message, bot) {
 		if (message.content.includes("github")) {
 			message.channel.send("https://github.com/reachomk/BikerBot");
 		}
+		if (message.content.includes("help")) {
+			help(message);
+		}
 	}
 	else if (message.content.includes("km to miles")) {
 		var msg = message.content;
@@ -81,4 +84,38 @@ milestokm = function(message, bot) {
 
 milestokm = function(miles, message, bot) {
 	message.channel.send(miles*1.609 + " km. ");
+}
+
+help = function(message) {
+	var out = ".deep_thoughts - Sends an extremely deep thought by Jack Handy. \n .history_meme - Sends a history meme. \n .milestokm (number) - Converts miles to km" 
+
+	message.channel.send({embed: {
+    color: 1237308,
+    author: {},
+    title: 'BikerBot Commands',
+    description: 'List of BikerBot commands. ',
+    fields: [{
+        name: ".deep_thoughts",
+        value: "Sends an extremely deep thought by Jack Handy."
+      },
+      {
+        name: ".history_meme",
+        value: "Sends a history meme. "
+      },
+      {
+        name: ".milestokm (number)",
+        value: "Converts (number) miles to km. Can also be accessed by \"(number) miles to km. \""
+      },
+      {
+        name: ".kmtomiles (number)",
+        value: "Converts (number) km to miles. Can also be accessed by \"(number) km to milestokm. \""
+      },
+      {
+        name: ".github",
+        value: "Sends link to BikerBot source code. "
+      }
+    ],
+    }
+    });
+
 }
