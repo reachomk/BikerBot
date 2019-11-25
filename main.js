@@ -38,7 +38,7 @@ commands = function(message, bot) {
 			history_meme(message, bot);
 		}
 		if (message.content.includes("kmtomiles")) {
-			kmtomiles(message, bot);
+			message.channel.send(kmtomiles(message, bot));
 		}
 	}
 }
