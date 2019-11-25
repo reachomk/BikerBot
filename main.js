@@ -20,4 +20,11 @@ bot.on("message", (message) => {
   }
 });
 
+bot.user.setPresence({
+        game: {
+            name: 'Use .help to see commands. ',
+            type: "Playing",
+        }
+    });
+
 bot.login(process.env.BOT_TOKEN);
