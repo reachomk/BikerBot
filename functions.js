@@ -108,7 +108,7 @@ help = function(message) {
       },
       {
         name: ".kmtomiles (number)",
-        value: "Converts (number) km to miles. Can also be accessed by \"(number) km to milestokm. \""
+        value: "Converts (number) km to miles. Can also be accessed by \"(number) km to miles. \""
       },
       {
         name: ".github",
