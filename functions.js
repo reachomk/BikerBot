@@ -64,21 +64,21 @@ kmtomiles = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var km = parseInt(msgArr[1]);
-	message.channel.send(km*1.609 + " miles. ");
+	message.channel.send(km/1.609 + " miles. ");
 }
 
 kmtomiles = function(km, message, bot) {
 	//console.log(km);
-	message.channel.send(km*1.609 + " miles. ");
+	message.channel.send(km/1.609 + " miles. ");
 }
 
 milestokm = function(message, bot) {
 	var msg = message.content;
 	var msgArr = msg.split(" ");
 	var miles = parseInt(msgArr[1]);
-	message.channel.send(miles/1.609 + " km. ");
+	message.channel.send(miles*1.609 + " km. ");
 }
 
 milestokm = function(miles, message, bot) {
-	message.channel.send(miles/1.609 + " km. ");
+	message.channel.send(miles*1.609 + " km. ");
 }
