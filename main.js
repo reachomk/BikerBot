@@ -30,17 +30,17 @@ bot.on("message", (message) => {
 bot.login(process.env.BOT_TOKEN);
 
 commands = function(message, bot) {
-	if (message.content.startsWith("!")) {
+	if (message.content.startsWith("!" || ".")) {
 		if (message.content.includes("deep_thoughts")) {
 			message.channel.send(deep_thoughts[Math.floor(Math.random() * deep_thoughts.length)]);
 		}
-		if (message.content.includes("history_meme")) { //Stolen from https://github.com/sodiumkid/Dr-Ferrel/blob/13f2bc9329983e579e1ca8b72cd7b5ad5fd0bb37/functions.js#L29
+		if (message.content.includes("history_meme")) { 
 			history_meme(message, bot);
 		}
 	}
 }
 
-history_meme = function(message, bot) {
+history_meme = function(message, bot) { //Stolen from https://github.com/sodiumkid/Dr-Ferrel/blob/13f2bc9329983e579e1ca8b72cd7b5ad5fd0bb37/functions.js#L29
 	var random = (Math.floor(Math.random() * Math.floor(527))) + 1
  			var number = "";
  			if (random < 10) {
@@ -61,4 +61,11 @@ history_meme = function(message, bot) {
  			message.channel.send({
      		file: imageName
  			});
+}
+
+kmtomiles = function(message, bot) {
+	var msg = message.content;
+	var msgArr = msg.split(" ");
+	var km = parseInt(msgArr[1]);
+	return km*1.609;
 }
