@@ -5,7 +5,7 @@ const deep_thoughts = [
 	"\"It takes a big man to cry, but it takes a bigger man to laugh at that man.\" - Junq Hundei"
 ];
 
-export commands = function(message, bot) {
+exports.commands = function(message, bot) {
 	if (message.content.startsWith("!") || message.content.startsWith(".")) {
 		if (message.content.includes("deep_thoughts")) {
 			message.channel.send(deep_thoughts[Math.floor(Math.random() * deep_thoughts.length)]);
