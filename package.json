@@ -12,6 +12,7 @@
     "discord.js-musicbot-addon": "^13.8.1",
     "dotenv": "^8.2.0",
     "ffmpeg": "0.0.4",
+    "m3u8stream": "^0.6.3",
     "node-gyp": "^6.0.1",
     "node-opus": "^0.3.3",
     "opusscript": "0.0.7",
